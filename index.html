@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randwulf Arthur Julian Tucker - Interactive CV Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--skill-level); }
+    }
+    .skill-bar {
+      animation: fillBar 1.5s ease-out forwards;
+    }
+    .experience-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    }
+    @media print {
+      .bg-blue-700 { background-color: #1d4ed8 !important; print-color-adjust: exact; }
+      .bg-blue-600 { background-color: #2563eb !important; print-color-adjust: exact; }
+      .bg-blue-800 { background-color: #1e40af !important; print-color-adjust: exact; }
+      .bg-green-600 { background-color: #059669 !important; print-color-adjust: exact; }
+      .bg-purple-600 { background-color: #7c3aed !important; print-color-adjust: exact; }
+      .bg-teal-600 { background-color: #0d9488 !important; print-color-adjust: exact; }
+      .bg-orange-600 { background-color: #ea580c !important; print-color-adjust: exact; }
+      .text-white { color: white !important; print-color-adjust: exact; }
+      .shadow-lg, .shadow-md, .shadow-sm { box-shadow: none !important; }
+      @page { margin: 0.5cm; }
+      .page-break { page-break-before: always; }
+    }
+    @media (max-width: 768px) {
+      .grid-cols-3 { grid-template-columns: 1fr; }
+      .col-span-2 { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-1 py-2" style="max-width: 210mm;">
+
+    <!-- First Page -->
+    <div class="first-page">
+
+      <!-- Header -->
+      <div class="bg-blue-700 text-white p-3 md:p-4 rounded-t-lg shadow-lg">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+          <div>
+            <h1 class="text-2xl font-bold">Randwulf Arthur Julian Tucker</h1>
+            <p class="text-blue-100 mt-1 text-sm">Data Analyst | MEL Professional | IT Configuration Manager</p>
+          </div>
+          <div class="text-right text-sm">
+            <p class="flex items-center justify-end gap-1">
+              <i class="fas fa-map-marker-alt text-xs"></i>
+              <span class="text-blue-200 text-xs">Freetown, Sierra Leone</span>
+            </p>
+            <p class="flex items-center justify-end gap-1">
+              <i class="fas fa-envelope text-xs"></i>
+              <a href="mailto:randwulftucker@gmail.com" class="text-blue-200 hover:text-white transition text-xs">randwulftucker@gmail.com</a>
+            </p>
+            <p class="flex items-center justify-end gap-1">
+              <i class="fas fa-phone text-xs"></i>
+              <a href="tel:+23278221556" class="text-blue-200 hover:text-white transition text-xs">+232 78 221556</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-3 gap-2 mt-2">
+
+        <!-- Left Column -->
+        <div class="col-span-1">
+
+          <!-- Professional Summary -->
+          <div class="bg-white p-3 rounded-lg shadow-sm mb-2 hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-user-tie mr-1 text-sm"></i> Professional Summary
+            </h2>
+            <p class="text-xs leading-tight">
+              A self-directed Monitoring, Evaluation & Learning (MEL) professional with strong expertise in data processing, ICT4D, IT configuration and system administrator, and project administration. Experienced in developing M&E frameworks, conducting surveys, and supervising large-scale data collection for development projects. Proficient with modern data tools and programming languages, with a proven track record of driving data-informed decision-making across health and development programs in Sierra Leone. Flexible and dedicated to field-based work in remote and underserved regions.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="bg-white p-3 rounded-lg shadow-sm mb-2 hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-graduation-cap mr-1 text-sm"></i> Education
+            </h2>
+            <div class="mb-2">
+              <div class="flex items-start">
+                <div class="text-blue-600 mr-1">
+                  <i class="fas fa-university text-xs"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-blue-600 text-xs">B.Sc. (Hons) Information Systems</p>
+                  <p class="text-xs">Institute of Public Administration and Management, Freetown</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-blue-600 text-xs mb-0.5 flex items-center">
+                <i class="fas fa-book-open mr-1 text-xs"></i> Relevant Coursework
+              </h3>
+              <ul class="space-y-0.5">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-1 text-xs"></i>
+                  <span class="text-xs">Data Warehousing & Business Intelligence</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-1 text-xs"></i>
+                  <span class="text-xs">Systems Analysis & Design</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-1 text-xs"></i>
+                  <span class="text-xs">Software Engineering</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-1 text-xs"></i>
+                  <span class="text-xs">Database Systems</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-500 mt-0.5 mr-1 text-xs"></i>
+                  <span class="text-xs">Machine Learning & Predictive Analytics</span>
+                </li>
+              </ul>
+              <p class="text-xs mt-1 text-gray-600 italic">Dissertation: Electronic Birth and Death Registration System (Project Lead)</p>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="bg-white p-3 rounded-lg shadow-sm mb-2 hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-language mr-1 text-sm"></i> Languages
+            </h2>
+            <div class="space-y-1">
+              <div>
+                <div class="flex justify-between text-xs mb-0.5">
+                  <span class="font-medium">English</span>
+                  <span class="text-gray-500">Fluent</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                  <div class="bg-blue-600 h-1.5 rounded-full skill-bar" style="--skill-level: 95%; width: 95%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-0.5">
+                  <span class="font-medium">French</span>
+                  <span class="text-gray-500">Basic</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                  <div class="bg-blue-600 h-1.5 rounded-full skill-bar" style="--skill-level: 25%; width: 25%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-certificate mr-1 text-sm"></i> Certifications & Training
+            </h2>
+            <ul class="space-y-0.5">
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Management Consulting</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Data Analysis in R</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Data Visualization in Tableau</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Advanced Excel</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Problem Solving & Decision Making</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Foundation in Project Management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">Python for Data Science & AI</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-award text-blue-600 mt-0.5 mr-1 text-xs"></i>
+                <span class="text-xs">SQL Certification</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right Column (2/3 width) -->
+        <div class="col-span-2">
+
+          <!-- Technical Skills -->
+          <div class="bg-white p-3 rounded-lg shadow-sm mb-2 hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-laptop-code mr-1 text-sm"></i> Technical Skills
+            </h2>
+            <div class="space-y-2">
+
+              <!-- Data Science & ML -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-chart-line mr-1 text-xs"></i> Data Science & Machine Learning
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Python (Proficient)</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">R (Proficient)</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Scikit-learn</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Pandas</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">NumPy</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Predictive Modeling</span>
+                </div>
+              </div>
+
+              <!-- Data Visualization & BI -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-chart-bar mr-1 text-xs"></i> Data Visualization & Business Intelligence
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-purple-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Power BI (Proficient)</span>
+                  <span class="bg-purple-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Tableau (Proficient)</span>
+                  <span class="bg-purple-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Excel (Advanced)</span>
+                  <span class="bg-purple-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Matplotlib</span>
+                  <span class="bg-purple-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Seaborn</span>
+                </div>
+              </div>
+
+              <!-- Databases & Data Engineering -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-database mr-1 text-xs"></i> Databases & Data Engineering
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-teal-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">SQL (Proficient)</span>
+                  <span class="bg-teal-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">PostgreSQL</span>
+                  <span class="bg-teal-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">MySQL</span>
+                  <span class="bg-teal-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Data Warehousing</span>
+                  <span class="bg-teal-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">ETL Pipelines</span>
+                </div>
+              </div>
+
+              <!-- Programming & Automation -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-code mr-1 text-xs"></i> Programming & Automation
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Python</span>
+                  <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Rust</span>
+                  <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">HTML</span>
+                  <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Shell Scripting</span>
+                </div>
+              </div>
+
+              <!-- Data Collection & Health Systems -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-hospital mr-1 text-xs"></i> Data Collection & Health Information Systems
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">DHIS2</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">CommCare</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">KoBo Toolbox</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">ODK</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">ICF Collect</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Clappia</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Red Rose</span>
+                  <span class="bg-green-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Jotform</span>
+                </div>
+              </div>
+
+              <!-- M&E & Project Management -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-0.5 text-xs flex items-center">
+                  <i class="fas fa-tasks mr-1 text-xs"></i> M&E & Project Management
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">M&E Framework Design</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Process Optimization</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Compliance Monitoring</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Trello</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">MS Teams</span>
+                  <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Google Workspace</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Professional Experience (First 2) -->
+          <div class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition">
+            <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+              <i class="fas fa-briefcase mr-1 text-sm"></i> Professional Experience
+            </h2>
+            <div class="grid grid-cols-2 gap-2">
+
+              <!-- Data Analyst -->
+              <div class="relative">
+                <div class="border-l-2 border-blue-500 pl-2 py-1">
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-blue-600 text-xs">Data Analyst [Full time]</h3>
+                    <span class="text-xs bg-blue-100 text-blue-700 py-0 px-1.5 rounded-full font-medium">May 2024 - Present</span>
+                  </div>
+                  <p class="text-xs font-medium">Informatics Consultancy Firm - Sierra Leone</p>
+                  <ul class="text-xs text-gray-600 list-disc pl-3 mt-0.5">
+                    <li>Conducted data cleaning, analysis, and visualization using R, Python, SQL, and Tableau to support evidence-based decision-making.</li>
+                    <li>Developed dashboards and reports; automated data processes and supported malaria program monitoring.</li>
+                    <li>Worked with health facilities to improve data reporting systems and DHIS2 compliance with national M&E standards.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- ICT4D Consultant - ICF -->
+              <div class="relative">
+                <div class="border-l-2 border-blue-500 pl-2 py-1">
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-blue-600 text-xs">ICT4D Consultant – School-Based ITN Distribution</h3>
+                    <span class="text-xs bg-blue-100 text-blue-700 py-0 px-1.5 rounded-full font-medium">May 2025 - Jul 2025</span>
+                  </div>
+                  <p class="text-xs font-medium">Informatics Consultancy Firm (ICF) - Sierra Leone</p>
+                  <ul class="text-xs text-gray-600 list-disc pl-3 mt-0.5">
+                    <li>Designed and deployed ICF Collect mobile data collection tools for program monitoring.</li>
+                    <li>Trained field staff on digital data collection and provided tier-one technical support.</li>
+                    <li>Monitored real-time data flow from field teams to central servers, ensuring data consistency and security.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Break -->
+    <div class="page-break"></div>
+
+    <!-- Second Page -->
+    <div class="second-page mt-2">
+
+      <!-- Experience Continued -->
+      <div class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition">
+        <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+          <i class="fas fa-briefcase mr-1 text-sm"></i> Professional Experience (continued)
+        </h2>
+        <div class="grid grid-cols-2 gap-2">
+
+          <!-- ICT4D Consultant - CRS -->
+          <div class="relative">
+            <div class="border-l-2 border-blue-500 pl-2 py-1">
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-blue-600 text-xs">ICT4D Consultant – ITN Mass Campaign</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 py-0 px-1.5 rounded-full font-medium">Aug 2023 - Mar 2024</span>
+              </div>
+              <p class="text-xs font-medium">Catholic Relief Services (CRS) - Sierra Leone</p>
+              <ul class="text-xs text-gray-600 list-disc pl-3 mt-0.5">
+                <li>Designed and deployed Red Rose and ODK mobile data collection tools for program monitoring and evaluation.</li>
+                <li>Provided ICT4D technical support to improve data quality across field operations.</li>
+                <li>Trained field staff on digital data collection and ensured seamless integration of M&E systems with project management tools (Trello, MS Teams, Google Docs).</li>
+                <li>Delivered tier-one level technical support for field staff across all operational districts.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Placeholder for future roles or additional details -->
+          <div class="relative">
+            <div class="border-l-2 border-blue-500 pl-2 py-1">
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-blue-600 text-xs">Key Achievements Summary</h3>
+                <span class="text-xs bg-green-100 text-green-700 py-0 px-1.5 rounded-full font-medium">Career Highlights</span>
+              </div>
+              <p class="text-xs font-medium">Across All Roles</p>
+              <ul class="text-xs text-gray-600 list-disc pl-3 mt-0.5">
+                <li>Led the digitalization of data collection systems for national ITN mass campaigns, contributing to improved malaria prevention coverage.</li>
+                <li>Designed and deployed multiple mobile data collection platforms (ICF Collect, Red Rose, ODK, KoBo) across health programs.</li>
+                <li>Built dashboards and automated reporting pipelines using Python, R, SQL, and Tableau for real-time program insights.</li>
+                <li>Trained dozens of field staff on digital data tools, improving data quality and operational efficiency in remote areas.</li>
+                <li>Supported DHIS2 integration and M&E framework development for national health programs.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Core Competencies -->
+      <div class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition mt-2">
+        <h2 class="text-base font-bold text-blue-700 border-b border-gray-200 pb-1 mb-1 flex items-center">
+          <i class="fas fa-star mr-1 text-sm"></i> Core Competencies
+        </h2>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Data Analysis & Visualization</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">M&E Framework Design</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">ICT for Development (ICT4D)</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Mobile Data Collection</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Health Information Systems</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Database Management</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Dashboard Development</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Field Staff Training</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Survey Design & Analysis</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Real-time Data Monitoring</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Malaria Program Support</span>
+          <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-xs font-medium">Process Automation</span>
+        </div>
+      </div>
+
+      <!-- References -->
+      <div class="mt-2 bg-blue-800 text-white p-3 rounded-lg shadow-lg">
+        <h2 class="text-base font-bold mb-1 text-center">Referees</h2>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="flex items-start">
+            <i class="fas fa-user-circle text-blue-300 text-xs mt-1 mr-1"></i>
+            <div>
+              <p class="font-bold text-xs">Mr. Amadu Abubakarr Bah</p>
+              <p class="text-xs text-blue-200">IT Project Manager</p>
+              <a href="mailto:abah.official.01@gmail.com" class="text-xs text-blue-200 hover:text-white transition">abah.official.01@gmail.com</a>
+              <p class="text-xs text-blue-200">+232 76 600003</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-user-circle text-blue-300 text-xs mt-1 mr-1"></i>
+            <div>
+              <p class="font-bold text-xs">Mr. Nelson Fofana</p>
+              <p class="text-xs text-blue-200">Senior M&E Officer</p>
+              <a href="mailto:nelsonfofana1979@gmail.com" class="text-xs text-blue-200 hover:text-white transition">nelsonfofana1979@gmail.com</a>
+              <p class="text-xs text-blue-200">+232 76 682799</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-user-circle text-blue-300 text-xs mt-1 mr-1"></i>
+            <div>
+              <p class="font-bold text-xs">Mr. Musa Sillah Kanu</p>
+              <p class="text-xs text-blue-200">Senior MEL & Surveillance Officer</p>
+              <a href="mailto:sillahmusakanu@gmail.com" class="text-xs text-blue-200 hover:text-white transition">sillahmusakanu@gmail.com</a>
+              <p class="text-xs text-blue-200">+232 31 096508</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('beforeprint', function() {
+        document.body.classList.add('print-mode');
+      });
+      window.addEventListener('afterprint', function() {
+        document.body.classList.remove('print-mode');
+      });
+    });
+  </script>
+</body>
+</html>
